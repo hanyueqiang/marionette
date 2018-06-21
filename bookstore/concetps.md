@@ -2,15 +2,21 @@
 该文档涵盖了Marionette基本使用方式和概念。这包括*calling conventions, setting attributes, common option patterns etc*.
 
 ## 目录
-Class-based Inheritance
-Value Attributes
-Functions Returning Values
-Binding Attributes on Instantiation
-Setting Options
-The getOption Method
-The mergeOptions Method
+[Class-based Inheritance](#class)
 
-## Class-based Inheritance
+[Value Attributes](#Value)
+
+[Functions Returning Values](#Functions)
+
+[Binding Attributes on Instantiation](#Binding)
+
+[Setting Options](#Setting)
+
+[The getOption Method](#getOption)
+
+[The mergeOptions Method](#mergeOptions)
+
+## <span id= "class">Class-based Inheritance</span>
 `Backbone`和	`Marionette`利用_.extend方法实现对类的继承，例如：`Marionette.View`、`Marionette.Object`等等通过`extend`方法达到继承的目的。
 
 在下面的示例中，我们创建了一个名为`MyView`的新的实例：
@@ -23,7 +29,7 @@ The mergeOptions Method
 
 		var view = new MyView();
 
-## Value Attributes
+## <span id= "Value">Value Attributes</span>
 当我们通过extend扩展类，我们可以通过传递特定的参数来定义在对象中属性：
 
 		var Mn = require('backbone.marionette');
@@ -45,7 +51,8 @@ The mergeOptions Method
 [Live example](https://jsfiddle.net/marionettejs/k93pejyb/)	
 
 当我们实例化`MyView`时，类名为`.bg-success`会在类名为`.my-region`的区域下创建元素。
-## Functions Returning Values
+
+## <span id= "Functions">Functions Returning Values</span>
 我们有时需要设置一个值在等函数运行时设置，因此，`Marionette`会在实例化后函数运行时执行并返回结果：
 		var Mn = require('backbone.marionette');
 
@@ -83,7 +90,7 @@ The mergeOptions Method
 正如我们所看到，几乎所有的属性都可以动态地计算出来。在大多数情况下，`Marionette`将在实例化或首次`render`调用该函数，并在视图的整个生命周期内保存该值。
 ## Function Context
 设置属性时，`Marionette`会把this指向你new的实例。您可以使用这个特性来确保您能够访问您的对象。
-## Binding Attributes on Instantiation
+## <span id= "Binding">Binding Attributes on Instantiation</span>
 在`Marionette`中，在定义类时，大多数属性可以绑定在类实例上。同时也可以绑定`events`、`triggers`、`Model`和`collections`：
 		var Mn = require('backbone.marionette');
 

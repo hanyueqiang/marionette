@@ -306,14 +306,14 @@
                                 <h2 id="marionette-&#x57FA;&#x672C;&#x6982;&#x5FF5;">Marionette &#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
 <p>&#x8BE5;&#x6587;&#x6863;&#x6DB5;&#x76D6;&#x4E86;Marionette&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x548C;&#x6982;&#x5FF5;&#x3002;&#x8FD9;&#x5305;&#x62EC;<em>calling conventions, setting attributes, common option patterns etc</em>.</p>
 <h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
-<p>Class-based Inheritance
-Value Attributes
-Functions Returning Values
-Binding Attributes on Instantiation
-Setting Options
-The getOption Method
-The mergeOptions Method</p>
-<h2 id="class-based-inheritance">Class-based Inheritance</h2>
+<p><a href="#class">Class-based Inheritance</a></p>
+<p><a href="#Value">Value Attributes</a></p>
+<p><a href="#Functions">Functions Returning Values</a></p>
+<p><a href="#Binding">Binding Attributes on Instantiation</a></p>
+<p><a href="#Setting">Setting Options</a></p>
+<p><a href="#getOption">The getOption Method</a></p>
+<p><a href="#mergeOptions">The mergeOptions Method</a></p>
+<h2 id="class-based-inheritance"><span id="class">Class-based Inheritance</span></h2>
 <p><code>Backbone</code>&#x548C;    <code>Marionette</code>&#x5229;&#x7528;_.extend&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x5BF9;&#x7C7B;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>Marionette.View</code>&#x3001;<code>Marionette.Object</code>&#x7B49;&#x7B49;&#x901A;&#x8FC7;<code>extend</code>&#x65B9;&#x6CD5;&#x8FBE;&#x5230;&#x7EE7;&#x627F;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
 <p>&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>MyView</code>&#x7684;&#x65B0;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
 <pre><code>    var Mn = require(&apos;backbone.marionette&apos;);
@@ -321,7 +321,7 @@ The mergeOptions Method</p>
     var MyView = Mn.View.extend({});
 </code></pre><p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;JavaScript&#x7684; new &#x6765;&#x521B;&#x5EFA;<code>MyView</code>&#x5B9E;&#x4F8B;&#xFF1A;</p>
 <pre><code>    var view = new MyView();
-</code></pre><h2 id="value-attributes">Value Attributes</h2>
+</code></pre><h2 id="value-attributes"><span id="Value">Value Attributes</span></h2>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x901A;&#x8FC7;extend&#x6269;&#x5C55;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F20;&#x9012;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x5C5E;&#x6027;&#xFF1A;</p>
 <pre><code>    var Mn = require(&apos;backbone.marionette&apos;);
 
@@ -340,7 +340,7 @@ The mergeOptions Method</p>
     });
 </code></pre><p><a href="https://jsfiddle.net/marionettejs/k93pejyb/" target="_blank">Live example</a>    </p>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x5B9E;&#x4F8B;&#x5316;<code>MyView</code>&#x65F6;&#xFF0C;&#x7C7B;&#x540D;&#x4E3A;<code>.bg-success</code>&#x4F1A;&#x5728;&#x7C7B;&#x540D;&#x4E3A;<code>.my-region</code>&#x7684;&#x533A;&#x57DF;&#x4E0B;&#x521B;&#x5EFA;&#x5143;&#x7D20;&#x3002;</p>
-<h2 id="functions-returning-values">Functions Returning Values</h2>
+<h2 id="functions-returning-values"><span id="Functions">Functions Returning Values</span></h2>
 <p>&#x6211;&#x4EEC;&#x6709;&#x65F6;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x503C;&#x5728;&#x7B49;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x65F6;&#x8BBE;&#x7F6E;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;<code>Marionette</code>&#x4F1A;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x65F6;&#x6267;&#x884C;&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF1A;
         var Mn = require(&apos;backbone.marionette&apos;);</p>
 <pre><code>    var MyView = Mn.View.extend({
@@ -375,7 +375,7 @@ The mergeOptions Method</p>
 <p>&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x770B;&#x5230;&#xFF0C;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x3002;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>Marionette</code>&#x5C06;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x6216;&#x9996;&#x6B21;<code>render</code>&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x5728;&#x89C6;&#x56FE;&#x7684;&#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#x4FDD;&#x5B58;&#x8BE5;&#x503C;&#x3002;</p>
 <h2 id="function-context">Function Context</h2>
 <p>&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;<code>Marionette</code>&#x4F1A;&#x628A;this&#x6307;&#x5411;&#x4F60;new&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x6765;&#x786E;&#x4FDD;&#x60A8;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x60A8;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
-<h2 id="binding-attributes-on-instantiation">Binding Attributes on Instantiation</h2>
+<h2 id="binding-attributes-on-instantiation"><span id="Binding">Binding Attributes on Instantiation</span></h2>
 <p>&#x5728;<code>Marionette</code>&#x4E2D;&#xFF0C;&#x5728;&#x5B9A;&#x4E49;&#x7C7B;&#x65F6;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;&#x5728;&#x7C7B;&#x5B9E;&#x4F8B;&#x4E0A;&#x3002;&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;<code>events</code>&#x3001;<code>triggers</code>&#x3001;<code>Model</code>&#x548C;<code>collections</code>&#xFF1A;
         var Mn = require(&apos;backbone.marionette&apos;);</p>
 <pre><code>    var MyView = Mn.View.extend({
@@ -446,7 +446,7 @@ The mergeOptions Method</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概念","level":"1.3","depth":1,"next":{"title":"View","level":"1.4","depth":1,"path":"bookstore/view.md","ref":"./bookstore/view.md","articles":[]},"previous":{"title":"安装 Marionette","level":"1.2","depth":1,"path":"bookstore/install.md","ref":"./bookstore/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/concetps.md","mtime":"2018-06-21T07:07:37.973Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T07:31:46.528Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概念","level":"1.3","depth":1,"next":{"title":"View","level":"1.4","depth":1,"path":"bookstore/view.md","ref":"./bookstore/view.md","articles":[]},"previous":{"title":"安装 Marionette","level":"1.2","depth":1,"path":"bookstore/install.md","ref":"./bookstore/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/concetps.md","mtime":"2018-06-21T08:00:21.923Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T08:38:59.156Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
