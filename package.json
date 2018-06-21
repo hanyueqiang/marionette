@@ -1,0 +1,20 @@
+{
+  "name": "Marionette-in-Chinese",
+  "version": "1.0.0",
+  "description": "marionette.js中文文档 V3.0.0",
+  //"main": "index.js",
+  "scripts": {
+		//"prebuild": "rm -rf docs && mkdir docs",
+		//"build": "gitbook build ./ ./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanyueqiang/marionette.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanyueqiang/marionette/issues"
+  },
+  "homepage": "https://github.com/hanyueqiang/marionette#readme"
+}
