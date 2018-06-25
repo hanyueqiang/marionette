@@ -122,3 +122,41 @@
 		});
 
 在这个例子中，'save:form'将不再被触发，因为'show:link'的triggers属性覆盖了它。
+## Setting Options
+`Marionette`可以在实例化时传递options。允许重写继承的属性。您还可以新的对象，该对象可以调用特有方法访问。
+	var Mn = require('backbone.marionette');
+
+	var MyView = Mn.View.extend({
+	  checkOption: function() {
+	    console.log(this.getOption('foo'));//通过getOption访问自定义的属性；
+	  }
+	});
+
+	var view = new MyView({
+	  foo: 'some text'
+	});
+
+	console.log(view.checkOption());  // prints 'some text'
+
+[Live example](https://jsfiddle.net/marionettejs/6n02ex1m/)
+
+## The `getOption` Method
+我们用`getOption`方法得到option
+
+	var Mn = require('backbone.marionette');
+
+	var MyView = Mn.View.extend({
+	  className: function() {
+	    var defaultClass = 'table';
+	    var extraClasses = this.getOption('extraClasses') || '';
+	    return defaultClass + ' ' + extraClasses;
+	  }
+	});
+
+	var myView = new MyView({
+	  model: new MyModel(),
+	  extraClasses: 'table-striped'
+	});
+
+[Live example](https://jsfiddle.net/marionettejs/ekvb8wwa/)
+
