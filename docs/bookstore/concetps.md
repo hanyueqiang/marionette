@@ -122,7 +122,7 @@
 		});
 
 在这个例子中，'save:form'将不再被触发，因为'show:link'的triggers属性覆盖了它。
-## Setting Options
+## <span id= "Setting">Setting Options</span>
 `Marionette`可以在实例化时传递options。允许重写继承的属性。您还可以新的对象，该对象可以调用特有方法访问。
 	var Mn = require('backbone.marionette');
 
@@ -140,7 +140,7 @@
 
 [Live example](https://jsfiddle.net/marionettejs/6n02ex1m/)
 
-## The `getOption` Method
+## <span id= "getOption">The `getOption` Method</span>
 我们用`getOption`方法得到option
 
 	var Mn = require('backbone.marionette');
@@ -159,4 +159,32 @@
 	});
 
 [Live example](https://jsfiddle.net/marionettejs/ekvb8wwa/)
+
+这只适用于`options`是`Backbone/Marionette`的参数，如`model`和`collection`，不能通过`getOption`访问，可以通过`view.model`和`view.collection`方式。
+
+## <span id= "mergeOptions">The `mergeOptions` Method</span>
+`mergeOptions`方法接受两个参数：一个`options`对象和来自对象中提的键。任何匹配的键将被合并实例上。例如：
+	var Bb = require('backbone');
+	var Mn = require('backbone.marionette');
+
+	var MyObject = Mn.Object.extend({
+	  initialize: function(options) {
+	    this.mergeOptions(options, ['model', 'something']);
+	    // this.model and this.something will now be available
+	  }
+	});
+
+	var myObject = new MyObject({
+	  model: new Backbone.Model(),
+	  something: 'test',
+	  another: 'value'
+	});
+
+	console.log(myObject.model);
+	console.log(myObject.something);
+	console.log(myObject.getOption('another'));
+
+[Live example](https://jsfiddle.net/marionettejs/ub510cbx/)
+
+在这个例子中，`model`和`somthing`可供`MyObject`实例直接使用，而`anther`必须通过`getOption`使用。当你想专有的类中使用其他的键时，这是很方便的。
 
