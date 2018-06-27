@@ -186,5 +186,5 @@
 
 [Live example](https://jsfiddle.net/marionettejs/ub510cbx/)
 
-在这个例子中，`model`和`somthing`可供`MyObject`实例直接使用，而`anther`必须通过`getOption`使用。当你想专有的类中使用其他的键时，这是很方便的。
+在这个例子中，`model`和`somthing`可供`MyObject`实例直接使用，而`anther`必须通过`getOption`使用。当你在新的实例中使用其他属性时，使用`mergeOptions`非常简单。
 
