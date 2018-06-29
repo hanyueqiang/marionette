@@ -339,6 +339,32 @@
 </li>
 </ul>
 <h2 id="rendering-a-template">Rendering a Template</h2>
+<p><code>Marionette View</code>&#x662F;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x6E32;&#x67D3;&#x9875;&#x9762;&#x65B9;&#x5F0F;&#xFF0C;&#x7ED9;&#x5B9A;&#x6A21;&#x677F;&#xFF0C;&#x5C06;&#x4ECE;&#x6A21;&#x677F;&#x4E2D;&#x521B;&#x5EFA;<code>HTML</code>&#xFF0C;&#x53EF;&#x4EE5;&#x6E32;&#x67D3;<code>model</code>&#x4E2D;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x7ED9;<code>views</code>&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6700;&#x597D;&#x5728;<code>onBeforeRender</code>&#x6216;`onRender &#x4E2D;&#x6DFB;&#x52A0;&#x4F60;&#x7684;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x5F53;&#x4F60;<code>render</code>&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x8981;&#x5728;<code>view</code>&#x4E2D;&#x8BBE;&#x7F6E;<code>template</code>&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code>var Mn = require(&apos;backbone.marionette&apos;);
+var _ = require(&apos;underscore&apos;);
+
+var myView = Mn.View.extend({
+    tagNmae&#xFF1A;&apos;h1&apos;,
+    template: _.template(&apos;Contents&apos;)
+});
+
+var myView = new MyView();
+myView.render();
+</code></pre><p>&#x5173;&#x4E8E;&#x5982;&#x4F55;<code>render</code>&#x6A21;&#x677F;&#xFF0C;&#x8BF7;&#x770B; Template &#x6587;&#x6863;</p>
+<h2 id="managing-an-existing-page">Managing an Existing Page</h2>
+<p><code>Marionette</code>&#x80FD;&#x591F;&#x7BA1;&#x7406;&#x9884;&#x751F;&#x6210;&#x7684;&#x9875;&#x9762;&#x2014;&#x2014;&#x9759;&#x6001;&#x9875;&#x9762;&#x6216;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6210;&#x9875;&#x9762;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x89C6;&#x4E3A;&#x6765;&#x81EA;<code>Marionette</code>&#x3002;</p>
+<pre><code>var Mn = require(&apos;backbone.marionette&apos;);
+
+var MyView = Mn.View({
+  el: &apos;#base-element&apos;,
+  template: false
+});
+</code></pre><p><code>Marionette View</code> &#x901A;&#x5E38;&#x88AB;&#x7528;&#x4E8E;&#x5728;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x6216;&#x8005;UI&#x64CD;&#x4F5C;&#x5B8C;&#x540E;&#x5C55;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x8FD9;&#x4E4B;&#x524D;<code>view</code>&#x662F;&#x6CA1;&#x6709;&#x6A21;&#x677F;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;<code>region</code>&#x5F00;&#x59CB;&#x5C55;&#x793A;&apos;view&apos; &#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x76D1;&#x542C;<code>before:render</code>&#x4E8B;&#x4EF6;&#x548C;<code>render</code>&#x4E8B;&#x4EF6;&#x88AB;&#x8C03;&#x7528;&#x5230;&#x65F6; &#x6E32;&#x67D3;&#x6211;&#x4EEC;&#x8981;&#x7528;&#x7684;<code>template</code>    </p>
+<h2 id="laying-out-views---regions-&#x5E03;&#x5C40;&#x8BD5;&#x56FE;---regions">Laying out Views - Regions (&#x5E03;&#x5C40;&#x8BD5;&#x56FE; - Regions)</h2>
+<p><code>Marionette.View</code>&#x5141;&#x8BB8;&#x4F7F;&#x7528;<code>regions</code>&#x6765;&#x7BA1;&#x7406;&#x8BD5;&#x56FE;&#x7ED3;&#x6784;&#xFF0C;<code>regions</code>&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x94A9;&#x5B50;&#x4E00;&#x6837;&#xFF0C;&#x5728;<code>View</code>&#x4E2D;&#x663E;&#x793A;<code>view</code>&#xFF0C;&#x63A7;&#x5236;&#x663E;&#x793A;&#x548C;&#x9690;&#x85CF;&#xFF0C;&#x5BF9;&#x5B50;<code>View</code>&#x4E8B;&#x4EF6;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x672C;&#x8282;&#x53EA;&#x4ECB;&#x7ECD;&#x57FA;&#x7840;&#xFF0C;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5173;&#x4E8E;<code>Region</code>,&#x770B;&#x4E0B;&#x9762; <code>Region</code> &#x6587;&#x6863;&#x3002;</p>
 
                                 
                                 </section>
@@ -382,7 +408,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"View","level":"1.4","depth":1,"next":{"title":"CollectionView","level":"1.5","depth":1,"path":"bookstore/collectionView.md","ref":"./bookstore/collectionView.md","articles":[]},"previous":{"title":"概念","level":"1.3","depth":1,"path":"bookstore/concetps.md","ref":"./bookstore/concetps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/view.md","mtime":"2018-06-27T04:44:14.866Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-27T04:44:59.813Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"View","level":"1.4","depth":1,"next":{"title":"CollectionView","level":"1.5","depth":1,"path":"bookstore/collectionView.md","ref":"./bookstore/collectionView.md","articles":[]},"previous":{"title":"概念","level":"1.3","depth":1,"path":"bookstore/concetps.md","ref":"./bookstore/concetps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/view.md","mtime":"2018-06-29T05:14:29.167Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T05:15:41.866Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

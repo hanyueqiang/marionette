@@ -32,3 +32,40 @@
 
 ## Rendering a Template
 
+`Marionette View`是一个强大的渲染页面方式，给定模板，将从模板中创建`HTML`，可以渲染`model`中数据以及任何信息。
+
+如果你想给`views`添加额外的方法，最好在`onBeforeRender`或`onRender 中添加你的逻辑。
+
+当你`render`一个模板，要在`view`中设置`template`属性：
+
+	var Mn = require('backbone.marionette');
+	var _ = require('underscore');
+
+	var myView = Mn.View.extend({
+		tagNmae：'h1',
+		template: _.template('Contents')
+	});
+
+	var myView = new MyView();
+	myView.render();
+
+关于如何`render`模板，请看 Template 文档
+
+## Managing an Existing Page
+
+`Marionette`能够管理预生成的页面——静态页面或服务器生成页面，并将它们视为来自`Marionette`。
+
+	var Mn = require('backbone.marionette');
+	
+	var MyView = Mn.View({
+	  el: '#base-element',
+	  template: false
+	});
+
+	
+`Marionette View` 通常被用于在事件触发或者UI操作完后展示出来，这之前`view`是没有模板的，我们可以在`region`开始展示'view' 时，通过监听`before:render`事件和`render`事件被调用到时 渲染我们要用的`template`	
+
+## Laying out Views - Regions (布局试图 - Regions)
+`Marionette.View`允许使用`regions`来管理试图结构，`regions`就像一个钩子一样，在`View`中显示`view`，控制显示和隐藏，对子`View`事件起作用。
+
+本节只介绍基础，了解更多关于`Region`,看下面 `Region` 文档。
