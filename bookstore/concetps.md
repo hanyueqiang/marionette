@@ -1,5 +1,5 @@
 ## Marionette 基本概念
-该文档涵盖了Marionette基本使用方式和概念。这包括*calling conventions, setting attributes, common option patterns etc*.
+该文档涵盖了Marionette基本使用方式和概念。包括`calling conventions, setting attributes, common option patterns etc`.
 
 ## 目录
 [Class-based Inheritance](#class)
@@ -17,20 +17,20 @@
 [The mergeOptions Method](#mergeOptions)
 
 ## <span id= "class">Class-based Inheritance</span>
-`Backbone`和	`Marionette`利用_.extend方法实现对类的继承，例如：`Marionette.View`、`Marionette.Object`等等通过`extend`方法达到继承的目的。
+`Backbone`和	`Marionette`利用_.extend方法实现对类的继承，例如：`Marionette.View`、`Marionette.Object`等通过`extend`方法达到继承。
 
-在下面的示例中，我们创建了一个名为`MyView`的新的实例：
+在下面的示例中，创建了一个名为`MyView`的实例：
 
 		var Mn = require('backbone.marionette');
 
 		var MyView = Mn.View.extend({});
 
-你也可以用JavaScript的 new 来创建`MyView`实例：
+可以用JavaScript的 new 来创建`MyView`实例：
 
 		var view = new MyView();
 
 ## <span id= "Value">Value Attributes</span>
-当我们通过extend扩展类，我们可以通过传递特定的参数来定义在对象中属性：
+通过extend扩展类，我们可以通过传递特定的参数来定义在对象中属性：
 
 		var Mn = require('backbone.marionette');
 

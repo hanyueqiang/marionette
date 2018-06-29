@@ -304,7 +304,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="marionette-&#x57FA;&#x672C;&#x6982;&#x5FF5;">Marionette &#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
-<p>&#x8BE5;&#x6587;&#x6863;&#x6DB5;&#x76D6;&#x4E86;Marionette&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x548C;&#x6982;&#x5FF5;&#x3002;&#x8FD9;&#x5305;&#x62EC;<em>calling conventions, setting attributes, common option patterns etc</em>.</p>
+<p>&#x8BE5;&#x6587;&#x6863;&#x6DB5;&#x76D6;&#x4E86;Marionette&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x548C;&#x6982;&#x5FF5;&#x3002;&#x5305;&#x62EC;<code>calling conventions, setting attributes, common option patterns etc</code>.</p>
 <h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
 <p><a href="#class">Class-based Inheritance</a></p>
 <p><a href="#Value">Value Attributes</a></p>
@@ -314,15 +314,15 @@
 <p><a href="#getOption">The getOption Method</a></p>
 <p><a href="#mergeOptions">The mergeOptions Method</a></p>
 <h2 id="class-based-inheritance"><span id="class">Class-based Inheritance</span></h2>
-<p><code>Backbone</code>&#x548C;    <code>Marionette</code>&#x5229;&#x7528;_.extend&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x5BF9;&#x7C7B;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>Marionette.View</code>&#x3001;<code>Marionette.Object</code>&#x7B49;&#x7B49;&#x901A;&#x8FC7;<code>extend</code>&#x65B9;&#x6CD5;&#x8FBE;&#x5230;&#x7EE7;&#x627F;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
-<p>&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>MyView</code>&#x7684;&#x65B0;&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<p><code>Backbone</code>&#x548C;    <code>Marionette</code>&#x5229;&#x7528;_.extend&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x5BF9;&#x7C7B;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>Marionette.View</code>&#x3001;<code>Marionette.Object</code>&#x7B49;&#x901A;&#x8FC7;<code>extend</code>&#x65B9;&#x6CD5;&#x8FBE;&#x5230;&#x7EE7;&#x627F;&#x3002;</p>
+<p>&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>MyView</code>&#x7684;&#x5B9E;&#x4F8B;&#xFF1A;</p>
 <pre><code>    var Mn = require(&apos;backbone.marionette&apos;);
 
     var MyView = Mn.View.extend({});
-</code></pre><p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;JavaScript&#x7684; new &#x6765;&#x521B;&#x5EFA;<code>MyView</code>&#x5B9E;&#x4F8B;&#xFF1A;</p>
+</code></pre><p>&#x53EF;&#x4EE5;&#x7528;JavaScript&#x7684; new &#x6765;&#x521B;&#x5EFA;<code>MyView</code>&#x5B9E;&#x4F8B;&#xFF1A;</p>
 <pre><code>    var view = new MyView();
 </code></pre><h2 id="value-attributes"><span id="Value">Value Attributes</span></h2>
-<p>&#x5F53;&#x6211;&#x4EEC;&#x901A;&#x8FC7;extend&#x6269;&#x5C55;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F20;&#x9012;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x5C5E;&#x6027;&#xFF1A;</p>
+<p>&#x901A;&#x8FC7;extend&#x6269;&#x5C55;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F20;&#x9012;&#x7279;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x5C5E;&#x6027;&#xFF1A;</p>
 <pre><code>    var Mn = require(&apos;backbone.marionette&apos;);
 
     var MyView = Mn.View.extend({
@@ -501,7 +501,7 @@ console.log(myObject.getOption(&apos;another&apos;));
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概念","level":"1.3","depth":1,"next":{"title":"View","level":"1.4","depth":1,"path":"bookstore/view.md","ref":"./bookstore/view.md","articles":[]},"previous":{"title":"安装 Marionette","level":"1.2","depth":1,"path":"bookstore/install.md","ref":"./bookstore/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/concetps.md","mtime":"2018-06-27T04:27:19.684Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T05:15:41.866Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概念","level":"1.3","depth":1,"next":{"title":"View","level":"1.4","depth":1,"path":"bookstore/view.md","ref":"./bookstore/view.md","articles":[]},"previous":{"title":"安装 Marionette","level":"1.2","depth":1,"path":"bookstore/install.md","ref":"./bookstore/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/concetps.md","mtime":"2018-06-29T05:31:35.898Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T05:32:21.044Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
