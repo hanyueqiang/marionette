@@ -69,3 +69,79 @@
 `Marionette.View`允许使用`regions`来管理试图结构，`regions`就像一个钩子一样，在`View`中显示`view`，控制显示和隐藏，对子`View`事件起作用。
 
 本节只介绍基础，了解更多关于`Region`,看下面 `Region` 文档。
+
+`Regions`在其他`View`渲染页面是互不影响的，这对独立渲染一块区域非常有用，在数据更新时不会重新渲染整个屏幕。
+
+`Regions`可以定义类时添加，也可以通过`addRegion`添加。
+
+当你给`View`扩展属性方法时，在`Regions`属性添加指定选择器，`new View`会被渲染出来。
+
+	var Mn = require('backbone.marionette');
+
+	var MyView = Mn.View.extend({
+	    template: '#tpl-view-with-regions',
+	
+	    regions: {
+	        firstRegion: '#first-region',
+	        secondRegion: '#second-region'
+	    }
+	});
+
+模板如下：
+
+	<script type="x-template/underscore" id="tpl-view-with-regions">
+	  <div id="first-region"></div>
+	  <div id="second-region"></div>
+	  <div id="third-region"></div>
+	</script>
+
+当我们在`Region`中显示视图时，在`#first-region`和`#second-region`会被替换我们要`show`的内容，这个`Region hash`是一个`jQuery`选择器，任何`jQuery`选择器语法都可以。
+
+## Managing Sub-views （管理子`View`）
+
+`View`提供了接口管理子`view`，`showChildView`和`getChildView`
+
+## Showing a view (展示一个`View`)
+
+在一个区域展示一个`view`,只需调用`showChildView(region, view)`，这将会渲染视图层`HTMl`，并且放在`Region`对应`Dom`下。
+
+	var Mn = require('backbone.marionette');
+	var SubView = require('./subview');
+	
+	var MyView = Mn.View.extend({
+	  template: '#tpl-view-with-regions',
+	
+	  regions: {
+	    firstRegion: '#first-region'
+	  },
+	
+	  onRender: function() {
+	    this.showChildView('firstRegion', new SubView());
+	  }
+	});
+
+## Accessing a child view (访问子view)
+
+访问视图的子视图，使用`getChildView(region)`方法。这将返回当前正在该`region`的视图实例，或`null`：
+
+	var Mn = require('backbone.marionette');
+	var SubView = require('./subview');
+	
+	var MyView = Mn.View.extend({
+	  template: '#tpl-view-with-regions',
+	
+	  regions: {
+	    firstRegion: '#first-region'
+	  },
+	
+	  onRender: function() {
+	    this.showChildView('firstRegion', new SubView());
+	  },
+	
+	  onSomeEvent: function() {
+	    var first = this.getChildView('firstRegion');
+	    first.doSomething();
+	  }
+	});
+
+如果没有`view`，返回`null`。

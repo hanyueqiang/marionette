@@ -365,6 +365,66 @@ var MyView = Mn.View({
 <h2 id="laying-out-views---regions-&#x5E03;&#x5C40;&#x8BD5;&#x56FE;---regions">Laying out Views - Regions (&#x5E03;&#x5C40;&#x8BD5;&#x56FE; - Regions)</h2>
 <p><code>Marionette.View</code>&#x5141;&#x8BB8;&#x4F7F;&#x7528;<code>regions</code>&#x6765;&#x7BA1;&#x7406;&#x8BD5;&#x56FE;&#x7ED3;&#x6784;&#xFF0C;<code>regions</code>&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x94A9;&#x5B50;&#x4E00;&#x6837;&#xFF0C;&#x5728;<code>View</code>&#x4E2D;&#x663E;&#x793A;<code>view</code>&#xFF0C;&#x63A7;&#x5236;&#x663E;&#x793A;&#x548C;&#x9690;&#x85CF;&#xFF0C;&#x5BF9;&#x5B50;<code>View</code>&#x4E8B;&#x4EF6;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
 <p>&#x672C;&#x8282;&#x53EA;&#x4ECB;&#x7ECD;&#x57FA;&#x7840;&#xFF0C;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5173;&#x4E8E;<code>Region</code>,&#x770B;&#x4E0B;&#x9762; <code>Region</code> &#x6587;&#x6863;&#x3002;</p>
+<p><code>Regions</code>&#x5728;&#x5176;&#x4ED6;<code>View</code>&#x6E32;&#x67D3;&#x9875;&#x9762;&#x662F;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#x7684;&#xFF0C;&#x8FD9;&#x5BF9;&#x72EC;&#x7ACB;&#x6E32;&#x67D3;&#x4E00;&#x5757;&#x533A;&#x57DF;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65F6;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x6574;&#x4E2A;&#x5C4F;&#x5E55;&#x3002;</p>
+<p><code>Regions</code>&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x7C7B;&#x65F6;&#x6DFB;&#x52A0;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>addRegion</code>&#x6DFB;&#x52A0;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x7ED9;<code>View</code>&#x6269;&#x5C55;&#x5C5E;&#x6027;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5728;<code>Regions</code>&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x6307;&#x5B9A;&#x9009;&#x62E9;&#x5668;&#xFF0C;<code>new View</code>&#x4F1A;&#x88AB;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#x3002;</p>
+<pre><code>var Mn = require(&apos;backbone.marionette&apos;);
+
+var MyView = Mn.View.extend({
+    template: &apos;#tpl-view-with-regions&apos;,
+
+    regions: {
+        firstRegion: &apos;#first-region&apos;,
+        secondRegion: &apos;#second-region&apos;
+    }
+});
+</code></pre><p>&#x6A21;&#x677F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>&lt;script type=&quot;x-template/underscore&quot; id=&quot;tpl-view-with-regions&quot;&gt;
+  &lt;div id=&quot;first-region&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;second-region&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;third-region&quot;&gt;&lt;/div&gt;
+&lt;/script&gt;
+</code></pre><p>&#x5F53;&#x6211;&#x4EEC;&#x5728;<code>Region</code>&#x4E2D;&#x663E;&#x793A;&#x89C6;&#x56FE;&#x65F6;&#xFF0C;&#x5728;<code>#first-region</code>&#x548C;<code>#second-region</code>&#x4F1A;&#x88AB;&#x66FF;&#x6362;&#x6211;&#x4EEC;&#x8981;<code>show</code>&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x4E2A;<code>Region hash</code>&#x662F;&#x4E00;&#x4E2A;<code>jQuery</code>&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x4EFB;&#x4F55;<code>jQuery</code>&#x9009;&#x62E9;&#x5668;&#x8BED;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x3002;</p>
+<h2 id="managing-sub-views-&#xFF08;&#x7BA1;&#x7406;&#x5B50;view&#xFF09;">Managing Sub-views &#xFF08;&#x7BA1;&#x7406;&#x5B50;<code>View</code>&#xFF09;</h2>
+<p><code>View</code>&#x63D0;&#x4F9B;&#x4E86;&#x63A5;&#x53E3;&#x7BA1;&#x7406;&#x5B50;<code>view</code>&#xFF0C;<code>showChildView</code>&#x548C;<code>getChildView</code></p>
+<h2 id="showing-a-view-&#x5C55;&#x793A;&#x4E00;&#x4E2A;view">Showing a view (&#x5C55;&#x793A;&#x4E00;&#x4E2A;<code>View</code>)</h2>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x533A;&#x57DF;&#x5C55;&#x793A;&#x4E00;&#x4E2A;<code>view</code>,&#x53EA;&#x9700;&#x8C03;&#x7528;<code>showChildView(region, view)</code>&#xFF0C;&#x8FD9;&#x5C06;&#x4F1A;&#x6E32;&#x67D3;&#x89C6;&#x56FE;&#x5C42;<code>HTMl</code>&#xFF0C;&#x5E76;&#x4E14;&#x653E;&#x5728;<code>Region</code>&#x5BF9;&#x5E94;<code>Dom</code>&#x4E0B;&#x3002;</p>
+<pre><code>var Mn = require(&apos;backbone.marionette&apos;);
+var SubView = require(&apos;./subview&apos;);
+
+var MyView = Mn.View.extend({
+  template: &apos;#tpl-view-with-regions&apos;,
+
+  regions: {
+    firstRegion: &apos;#first-region&apos;
+  },
+
+  onRender: function() {
+    this.showChildView(&apos;firstRegion&apos;, new SubView());
+  }
+});
+</code></pre><h2 id="accessing-a-child-view-&#x8BBF;&#x95EE;&#x5B50;view">Accessing a child view (&#x8BBF;&#x95EE;&#x5B50;view)</h2>
+<p>&#x8BBF;&#x95EE;&#x89C6;&#x56FE;&#x7684;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4F7F;&#x7528;<code>getChildView(region)</code>&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x5C06;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8BE5;<code>region</code>&#x7684;&#x89C6;&#x56FE;&#x5B9E;&#x4F8B;&#xFF0C;&#x6216;<code>null</code>&#xFF1A;</p>
+<pre><code>var Mn = require(&apos;backbone.marionette&apos;);
+var SubView = require(&apos;./subview&apos;);
+
+var MyView = Mn.View.extend({
+  template: &apos;#tpl-view-with-regions&apos;,
+
+  regions: {
+    firstRegion: &apos;#first-region&apos;
+  },
+
+  onRender: function() {
+    this.showChildView(&apos;firstRegion&apos;, new SubView());
+  },
+
+  onSomeEvent: function() {
+    var first = this.getChildView(&apos;firstRegion&apos;);
+    first.doSomething();
+  }
+});
+</code></pre><p>&#x5982;&#x679C;&#x6CA1;&#x6709;<code>view</code>&#xFF0C;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</p>
 
                                 
                                 </section>
@@ -408,7 +468,7 @@ var MyView = Mn.View({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"View","level":"1.4","depth":1,"next":{"title":"CollectionView","level":"1.5","depth":1,"path":"bookstore/collectionView.md","ref":"./bookstore/collectionView.md","articles":[]},"previous":{"title":"概念","level":"1.3","depth":1,"path":"bookstore/concetps.md","ref":"./bookstore/concetps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/view.md","mtime":"2018-06-29T05:14:29.167Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T05:32:21.044Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"View","level":"1.4","depth":1,"next":{"title":"CollectionView","level":"1.5","depth":1,"path":"bookstore/collectionView.md","ref":"./bookstore/collectionView.md","articles":[]},"previous":{"title":"概念","level":"1.3","depth":1,"path":"bookstore/concetps.md","ref":"./bookstore/concetps.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bookstore/view.md","mtime":"2018-07-07T13:04:41.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-07T13:05:16.918Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
