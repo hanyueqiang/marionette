@@ -145,3 +145,35 @@
 	});
 
 如果没有`view`，返回`null`。
+
+## Referencing UI in events （事件中引用UI）
+	
+当我们在设置在事件触发事件或者`trigger`对象时，`UI`属性非常有用，只需使用`@ui`前缀。
+
+	var Mn = require('backbone.marionette');
+	
+	var MyView = Mn.View.extend({
+	  template: '#my-template',
+	  ui: {
+	    save: '#save-button',
+	    close: '.close-button'
+	  },
+	
+	  events: {
+	    'click @ui.save': 'handleSave'
+	  },
+	
+	  triggers: {
+	    'click @ui.close': 'close:view'
+	  },
+	
+	  handleSave: function() {
+	    this.model.save();
+	  }
+	});
+
+在这个例子中，当用户点击`#save-button`保存时，将调用`handleSave`，当用户点击`#close-button`关闭按钮时，事件`close:view`将会在`MyView`中关闭。
+
+通过使用`@ui`，我们可以更改底层模板，而不必为使用整个View上选择器，只需更新`UI`对象即可。
+
+## Events （事件）
