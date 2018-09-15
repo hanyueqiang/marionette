@@ -1,5 +1,5 @@
 
-# Marionette 中文文档 V3.0.0
+# Marionette 中文文档 V2.4.1
 
 ![Marionette icon](./marionette.svg)
 
@@ -10,6 +10,6 @@
 Marionette 的开发开始于一个项目管理系统，Backbone的Model和Collection数据层来绑定到Marionette的View层，作者的初衷是让开发人员更关注于Model、Collection，解放View层Dom操作，Marionette提供的丰富Api极大的提高了开发效率。
 
 ## 开始之前
->  工作之余对gitbook产生了兴趣，而Marionette.js的学习在国内没有找到合适中文文档，学习成本较高，所以产生了自己动手写的想法，并分享给大家，同时也在不断学习Marionette新的Api及用法，如有译不妥处请多多包涵,欢迎[issues](https://github.com/hanyueqiang/marionette/issues)。
+>  Marionette.js的学习在国内没有找到合适中文文档，学习成本较高，所以产生了自己动手翻译的想法，并分享给大家，推荐读者阅读官方文档。欢迎[issues](https://github.com/hanyueqiang/marionette/issues)。
 
- 推荐阅读官方文档 [https://marionettejs.com](https://marionettejs.com)
+ 推荐官方文档 [https://marionettejs.com](https://marionettejs.com)
